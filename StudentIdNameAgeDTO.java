@@ -1,4 +1,10 @@
 package com.mystudent.hibernate.student.student_hibernate.dto;
+/* DTO: Data Transfer Object */
+/* DTOs are used to transfer only specific pieces of data from the database, 
+ * instead of accessing the entire entity object, which might contain sensitive or unnecessary information. 
+ * This improves security and minimizes data exposure. */
+/* A DTO class is created separately to define the exact structure of data to be fetched and used, 
+ * without directly exposing the entity class. */
 
 public class StudentIdNameAgeDTO 
 {
