@@ -11,7 +11,8 @@ public class RetrieveStdNameUsingHQL
 		// To create session reference
 		Session session = StudentUtility.getSessionFactory().openSession();
 		/*--- Creating query reference to retrieve name of all the students ---*/
-		Query query = session.createQuery("select stdName from StudentEntities"); //Create query method using Query Interface
+		//Query query = session.createQuery("select stdName from StudentEntities"); //Create query method using Query Interface
+		Query query = session.createNamedQuery("fetchStudentNames"); //Here we are using @NamedQuery(name="fetchStudentList) instead of query from entity class
 		/*---- To execute the query ----*/
 		List<String> studentNames = query.list(); //List interface .list() method
 		if(studentNames.size()>0)
