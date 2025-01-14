@@ -1,13 +1,16 @@
 package com.mystudent.hibernate.student.student_hibernate.hql;
 
 import com.mystudent.hibernate.student.student_hibernate.entities.*;
+
 import com.mystudent.hibernate.student.student_hibernate.utility.*;
 
 import org.hibernate.*;
 import org.hibernate.query.*;
 
 import java.util.*;
-
+/*HQL : Hibernate query Language WHICH DEALS WITH ENTITY NOT WITH TABLES UNLIKE SQL DEALS WITH TABLES*/
+/*TO EXECUTE QUERY HERE WE USE .createQuery() method SIMILAR TO JDBC to insert we use .executeQuery() 
+  and to update .executeUpdate()*/
 public class RetreiveUsingHQL 
 {
 	public static void main(String[] args) 
@@ -15,7 +18,7 @@ public class RetreiveUsingHQL
 		/*-------Creating Session------*/
 		Session session = StudentUtility.getSessionFactory().openSession();
 		/*-------Creating reference of Query interface to retrieve student data-------*/
-		Query queryRef = session.createQuery("from student");
+		Query queryRef = session.createQuery("from StudentEntities"); //Here always use class names not tables names
 		/*----------------------Executing the query---------------------*/
 		List<StudentEntities> studentList = queryRef.list();
 		/*----------Checking data------------*/
