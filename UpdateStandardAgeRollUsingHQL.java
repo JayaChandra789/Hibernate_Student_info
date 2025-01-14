@@ -26,7 +26,8 @@ public class UpdateStandardAgeRollUsingHQL
 		/*--- Creating reference of Transaction -------*/
 		Transaction transaction = session.beginTransaction();
 		//Creating reference of Query interface ----
-		Query query = session.createQuery("update StudentEntities set stdStandard =: x, stdRoll =: y, stdAge =: z where stdId =: m");
+	//	Query query = session.createQuery("update StudentEntities set stdStandard =: x, stdRoll =: y, stdAge =: z where stdId =: m"); //Using already defined query in entity class
+		Query query = session.createNamedQuery("UpdateStandardAndRollAndAge");//Here we are using @NamedQuery(name="fetchStudentList) instead of query from entity class
 		/*---- setting data into the parameter -----*/
 		query.setParameter("x",std); //We need to set parameters for each argument
 		query.setParameter("y", rollNo);
