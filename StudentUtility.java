@@ -1,6 +1,8 @@
 package com.mystudent.hibernate.student.student_hibernate.utility;
 
 import org.hibernate.cfg.Configuration; //
+
+
 import org.hibernate.SessionFactory; //
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -33,6 +35,7 @@ public class StudentUtility
 			/*------------------------------------------------------------------------*/
 			/*---- setting annotated entity class----*/
 			configRef.addAnnotatedClass(com.mystudent.hibernate.student.student_hibernate.entities.StudentEntities.class);
+			configRef.addAnnotatedClass(com.mystudent.hibernate.student.student_hibernate.coursefk.CourseDetailsEntities.class);
 			/*-------------------------------------------------------------------------------*/
 			/*------------Creating reference of StandardRegistery to apply the settings---------------*/
 			StandardServiceRegistry serviceRegistryRef = new StandardServiceRegistryBuilder().applySettings(configRef.getProperties()).build();
