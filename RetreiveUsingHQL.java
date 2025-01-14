@@ -18,7 +18,8 @@ public class RetreiveUsingHQL
 		/*-------Creating Session------*/
 		Session session = StudentUtility.getSessionFactory().openSession();
 		/*-------Creating reference of Query interface to retrieve student data-------*/
-		Query queryRef = session.createQuery("from StudentEntities"); //Here always use class names not tables names
+		//Query queryRef = session.createQuery("from StudentEntities"); //Here always use class names not tables names
+		Query queryRef = session.createNamedQuery("fetchStudentList"); //Here we are using @NamedQuery(name="fetchStudentList) From entity class instead of typing query. 
 		/*----------------------Executing the query---------------------*/
 		List<StudentEntities> studentList = queryRef.list();
 		/*----------Checking data------------*/
